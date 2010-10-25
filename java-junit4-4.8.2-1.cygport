@@ -1,0 +1,16 @@
+GIT_URI="http://github.com/KentBeck/junit.git"
+GIT_TAG="r${PV}"
+# ecj-3.5 does not properly compile package-info.java
+JAVA_CLASSPATH="javac.jar"
+inherit ant git
+
+DESCRIPTION="Java unit test framework"
+HOMEPAGE="http://www.junit.org/"
+
+ANT_BUILD_ARGS="-Dbinjar=junit4-${PV}.jar"
+ANT_BUILD_TARGETS="populate-dist"
+ANT_INSTALL_JARS="junit${PV}/junit4-${PV}.jar"
+ANT_INSTALL_JAVADOC="junit${PV}/javadoc"
+ANT_INSTALL_WRAPPERS="junit4,junit4.jar,junit.textui.TestRunner"
+
+DOCS="*.html"
